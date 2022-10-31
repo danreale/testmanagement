@@ -3,6 +3,8 @@ CREATE TABLE testcases (
    test_case_name           VARCHAR      NOT NULL,
    test_spec            VARCHAR     NOT NULL,
    test_type        VARCHAR	NOT NULL,
+   test_steps        VARCHAR	NOT NULL,
+   jira_references        VARCHAR   ARRAY	   NOT NULL,
    created_on         TIMESTAMP NOT null DEFAULT NOW(),
    updated_on	TIMESTAMP
 );

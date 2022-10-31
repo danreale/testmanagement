@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "pgtest": "ts-node ./scripts/bulk_insert_test.ts",
-    "pgtestresults": "ts-node ./scripts/bulk_insert_results.ts"
+    "pgtestresults": "ts-node ./scripts/bulk_insert_results.ts",
+    "start:api": "ts-node ./api/src/app.ts"
   },
   "repository": {
     "type": "git",
