@@ -62,10 +62,15 @@ export const remove = async (req: Request, res: Response) => {
   );
 };
 export const getCounts = async (_req: Request, res: Response) => {
-  pool.query("SELECT * FROM testcases", (error, results) => {
-    if (error) {
-      res.status(404).send({ message: error });
+  pool.query(
+    `select test_type, count(test_type) from testcases
+  group by test_type
+  order by test_type asc`,
+    (error, results) => {
+      if (error) {
+        res.status(404).send({ message: error });
+      }
+      res.status(200).json(results.rows);
     }
-    res.status(200).json(results.rows);
-  });
+  );
 };
