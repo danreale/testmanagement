@@ -1,13 +1,19 @@
 import express from "express";
 const router = express.Router();
 
-import { get } from "../controllers/testCases";
+import {
+  get,
+  create,
+  update,
+  remove,
+  getCounts,
+} from "../controllers/testCases";
 
 router.get("/", get);
-// Router().post("/", testcases.create);
-// Router().put("/:id", testcases.update);
-// Router().delete("/:id", testcases.delete);
+router.post("/", create);
+router.put("/:id", update);
+router.delete("/:id", remove);
 
-// Router().get("/counts", testcases.get);
+router.get("/counts", getCounts);
 
 module.exports = router;
