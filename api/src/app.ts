@@ -10,9 +10,13 @@ app.use(express.urlencoded({ extended: true }));
 
 const testCasesRoutes = require("./routes/testCases");
 const testResultsRoutes = require("./routes/testResults");
+const testTypesRoutes = require("./routes/testTypes");
+const statsRoutes = require("./routes/stats");
 
 app.use("/testcases", testCasesRoutes);
 app.use("/testresults", testResultsRoutes);
+app.use("/testtypes", testTypesRoutes);
+app.use("/stats", statsRoutes);
 
 app.get("/api/v1/ping", (_req: Request, res: Response) => {
   res.json({ message: "pong" });
