@@ -4,4 +4,5 @@ export interface TESTCASE {
   test_type: string;
   test_steps: string;
   jira_references: Array<string>;
+  automated: boolean;
 }
