@@ -5,6 +5,7 @@
 --    test_type        VARCHAR	NOT NULL,
 --    test_steps        VARCHAR	NOT NULL,
 --    jira_references        VARCHAR   ARRAY	   NOT NULL,
+--    automated BOOLEAN not null,
 --    created_on         TIMESTAMP NOT null DEFAULT NOW(),
 --    updated_on	TIMESTAMP
 -- );
