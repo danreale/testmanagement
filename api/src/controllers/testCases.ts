@@ -22,12 +22,12 @@ export const create = async (req: Request, res: Response) => {
   };
   pool.query(
     `insert into testcases (test_case_name, test_spec, test_type, test_steps, jira_references, automated)
-    VALUES('${req.body.test_case_name}', '${req.body.test_spec}', '${req.body.test_type}', '${req.body.test_steps}', '{${req.body.jira_references}}', ${req.body.automated})`,
+    VALUES('${tc.test_case_name}', '${tc.test_spec}', '${tc.test_type}', '${tc.test_steps}', '{${tc.jira_references}}', ${tc.automated}) RETURNING *`,
     (error, results) => {
       if (error) {
         res.status(404).send({ message: error });
       }
-      res.status(200).json({ createdRecords: results.rowCount, tc });
+      res.status(200).json({ result: results.rows[0] });
     }
   );
 };
@@ -41,12 +41,12 @@ export const update = async (req: Request, res: Response) => {
     automated: req.body.automated,
   };
   pool.query(
-    `update testcases set test_case_name = '${req.body.test_case_name}', test_spec = '${req.body.test_spec}', test_type = '${req.body.test_type}', test_steps = '${req.body.test_steps}', jira_references = '{${req.body.jira_references}}' automated = ${req.body.automated} where test_case_id = ${req.params.id}`,
+    `update testcases set test_case_name = '${tc.test_case_name}', test_spec = '${tc.test_spec}', test_type = '${tc.test_type}', test_steps = '${tc.test_steps}', jira_references = '{${tc.jira_references}}', automated = ${tc.automated} where test_case_id = ${req.params.id} RETURNING *`,
     (error, results) => {
       if (error) {
         res.status(404).send({ message: error });
       }
-      res.status(200).json({ updatedRecords: results.rowCount, tc });
+      res.status(200).json({ result: results.rows[0] });
     }
   );
 };
