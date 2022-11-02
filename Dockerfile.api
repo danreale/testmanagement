@@ -12,6 +12,7 @@ COPY . .
 # ENTRYPOINT [ "/bin/bash" ]
 # CMD [ "npm", "run", "build" ]
 EXPOSE 3000
-CMD [ "node", "./dist/api/src/app.js" ]
+CMD [ "npm", "run", "start:api:dev" ]
+# CMD [ "node", "./dist/api/src/app.js" ]
 # CMD [ "node", "server.js" ]
 # CMD [ "ts-node", "api/src/app.ts" ]
