@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { pool } from "../db";
-import { TESTRESULT } from "../../../models/testresult";
+import { TESTRESULT } from "../models/testresult";
 
 export const get = async (_req: Request, res: Response) => {
   pool.query("SELECT * FROM testresults", (error, results) => {

@@ -1,5 +1,5 @@
 {
-  "name": "testmanagement",
+  "name": "api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "pgtest": "ts-node ./scripts/bulk_insert_test.ts",
     "pgtestresults": "ts-node ./scripts/bulk_insert_results.ts",
     "build": "tsc",
-    "start:api:dev": "nodemon --watch \"api/src/**\" --ext \"ts\" --ignore \"api/**/*.spec.ts\" --exec \"ts-node api/src/app.ts\""
+    "start:api:dev": "nodemon --watch \"src/**\" --ext \"ts\" --ignore \"src/**/*.spec.ts\" --exec \"ts-node src/app.ts\""
   },
   "repository": {
     "type": "git",

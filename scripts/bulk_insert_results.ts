@@ -1,6 +1,6 @@
 const pg = require("pg");
 const format = require("pg-format");
-import { TESTRESULT } from "../models/testresult";
+import { TESTRESULT } from "./src/models/testresult";
 
 const resArr: any = [];
 
